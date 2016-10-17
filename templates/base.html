@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/static/base.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#begdate").datepicker();
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#enddate").datepicker();
+        });
+    </script>
+</head>
+<ul class="nav nav-pills color">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+</ul>
+<body>
+<div class="jumbotron">
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="text-center">
+             <h1>{% block header_text %}{% endblock %}</h1>
+             {% for message in get_flashed_messages() %}
+                <div class="flash">{{ message }}</div>
+             {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>    
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            {% block table %}
+            {% endblock %}
+        </div> 
+    </div>
+<br><br><br><br><br><br>
+{% block body %}
+{% endblock %}
+</div>
+</body>

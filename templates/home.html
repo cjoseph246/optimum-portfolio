@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %}
+
+{% block header_text %}Your Portfolio{% endblock %}
+
+{% block body %}
+<div id="plot">
+    {{ snippet|safe }}
+</div>
+{% endblock %}
