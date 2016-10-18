@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+
+{% block header_text %}Trade Plots{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-2">
+      <div class="text-center">
+       <div id="plot">
+  		{% for plot in plots -%}
+    	   <img src="{{ plot }}"> 
+	<br />
+    	{%- endfor %}
+	<br>
+      </div>
+    </div>  
+     <h4>
+  		Optimum Allocation: {% for asset in assets %} 
+                              {{ symbols[loop.index0] }} {{asset}}%
+                            {% endfor %}<br> 
+  		Return: {{ returns }}% <br>
+  		Risk: {{ risk }}% <br>
+  		Sharpe: {{ sharpe }} <br>
+ 	</h4>
+  </div>
+</div>
+
+{% endblock %}
