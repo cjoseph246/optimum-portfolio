@@ -1,0 +1,34 @@
+
+{% extends 'base.html' %}
+
+{% block header_text %}Trade Portfolio
+<h3>Please enter stock symbols</h3>
+<h4>(Up to 5 stocks)</h4>
+{% endblock %}
+
+{% block table %}
+	<br>
+    <div class=stocks>		
+    <form action="{{ url_for('add_entry') }}" method="post" class="add-entry">
+                    <input type="text" name="first" autocomplete="off"><br>
+                    <input type="text" name="second" autocomplete="off"><br>
+                    <input type="text" name="third" autocomplete="off"><br>
+                    <input type="text" name="fourth" autocomplete="off"><br>
+                    <input type="text" name="fifth" autocomplete="off"><br>
+                    Beginning Date<input type="date" input id="begdate" name="begdate"/>
+                    End Date<input type="date" input id="enddate" name="enddate" />
+                    <hr>
+                    <input type="submit" value="Submit"><br>
+                    <br><br>
+    </form>
+</div>
+<!--     <ul class="entries">
+        {% for entry in entries %}
+            {{ entry.first }}, {{ entry.second }}, {{ entry.third }}, {{ entry.fourth }},
+            {{ entry.fifth }}
+        {% else %}
+            <li><em>Unbelievable.  No entries here so far</em>
+        {% endfor %}
+    </ul>
+-->
+{% endblock %}
