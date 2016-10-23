@@ -12,7 +12,9 @@ Heavy lifting done with numpy, pandas, and flask.
 
 Screenshots
 
-[normalized data](static/stock_levels.png)
+[home page](screenshots/trade-home.png)
 
-[efficient frontier](static/min_risk_return.png)
+[stock levels](screenshots/trade-first-plot.png)
+
+[efficient frontier](screenshots/trade-efficient-frontier.png)
 
